@@ -30,7 +30,6 @@ body {
           font-size: 80px;
           animation-name: text-ani;
           animation-duration: 1s;
-
           span {
             font-size: 120px;
             display: block;
@@ -41,7 +40,6 @@ body {
           display: grid;
           grid-template-columns: auto auto auto auto auto auto;
           align-items: center;
-
           animation-name: text-ani;
           animation-duration: 1.4s;
           &-item {
@@ -49,6 +47,10 @@ body {
           }
           &-item:nth-child(2) {
             height: 60px;
+          }
+          &-item:nth-child(6) {
+            background: white;
+            padding: 10px;
           }
         }
       }
@@ -126,13 +128,14 @@ body {
               width: 0%;
               height: 0%;
               border-radius: 100%;
-              background: #fff url('../images/more/read-more3.png') no-repeat
+              background: #fff url('../images/more/readMore3.png') no-repeat
                 center/130px;
               position: absolute;
               top: 50%;
               left: 50%;
               transform: translate(-50%, -50%);
               z-index: 1;
+              opacity: 0;
 
               animation-name: spin2;
               animation-duration: 10s;
@@ -167,6 +170,9 @@ body {
             .title {
               font-size: 60px;
               margin: 0;
+              span {
+                font-size: 30px;
+              }
             }
             .text {
               font-size: 20px;
@@ -195,34 +201,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 48px;
-    color: #fff;
-  }
-}
-
-@keyframes text-ani {
-  0% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 0;
-    transform: translate3d(0, 50px, 0);
-  }
-}
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes spin2 {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(360deg);
+    .contact {
+      font-size: 48px;
+      color: #fff;
+      .title {
+        color: #969696;
+        font-size: 2rem;
+      }
+      p {
+        font-size: 30px;
+      }
+      span {
+        font-size: 28px;
+      }
+    }
   }
 }
 
@@ -260,6 +252,9 @@ body {
             span {
               font-size: 8vw;
             }
+          }
+          .icon {
+            gap: 20px;
           }
         }
         .read-more {
@@ -305,6 +300,9 @@ body {
               position: static;
               .title {
                 font-size: 35px;
+                span {
+                  font-size: 18px;
+                }
               }
               .text {
                 font-size: 16px;
@@ -347,8 +345,18 @@ body {
       ul {
         li {
           width: 100%;
-          margin-top: 0;
+          margin-top: 0 !important;
           margin-bottom: 30px;
+          a {
+            .wrap-text {
+              .title {
+                span {
+                  display: block;
+                  font-size: 15px;
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -369,10 +377,7 @@ body {
         .wrap-text {
           width: 100%;
           .title {
-            font-size: 28px;
-            span {
-              margin-left: -20px;
-            }
+            font-size: 24px;
           }
         }
       }
@@ -385,9 +390,33 @@ body {
       }
     }
     .end {
-      h2 {
-        font-size: 48px;
-      }
     }
+  }
+}
+
+/* animation */
+@keyframes text-ani {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin2 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
